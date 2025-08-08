@@ -21,6 +21,8 @@ mercadopago.configure({
 app.use(express.json());
 
 // Rutas
+const createPreference = require("./routes/create_preference");
+const webhookRoute = require("./routes/webhook");
 app.use("/", require("./routes/create_preference"));
 app.use("/", require("./routes/webhook"));
 app.use("/", require("./routes/loginValidator"));
