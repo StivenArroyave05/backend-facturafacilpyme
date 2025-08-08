@@ -6,8 +6,14 @@ const mercadopago = require("mercadopago");
 const app = express();
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
-app.use(express.json());
-app.use(cors());
+// Usa tu dominio real de Netlify aquí
+const corsOptions = {
+  origin: "https://facturafacilpymes.netlify.app", // tu dominio frontend
+  methods: ["GET", "POST"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Configurar MercadoPago con token desde .env
