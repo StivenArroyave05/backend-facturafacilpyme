@@ -16,11 +16,13 @@ mercadopago.configure({
 });
 
 // Rutas
-const createPreference = require("./routes/create_preference");
-const webhookRoute = require("./routes/webhook");
+const createPreferenceRoutes = require("./routes/create_preference");
+const webhookRoutes = require("./routes/webhook");
+const loginValidatorRoutes = require("./routes/loginValidator");
+
 app.use("/", createPreferenceRoutes);
-app.use("/", require("./routes/webhook"));
-app.use("/", require("./routes/loginValidator"));
+app.use("/", webhookRoutes);
+app.use("/", loginValidatorRoutes);
 
 // Servidor
 const PORT = process.env.PORT || 3000;
