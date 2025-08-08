@@ -18,7 +18,7 @@ mercadopago.configure({
 // Rutas
 const createPreference = require("./routes/create_preference");
 const webhookRoute = require("./routes/webhook");
-app.use("/", require("./routes/create_preference"));
+app.use("/", createPreferenceRoutes);
 app.use("/", require("./routes/webhook"));
 app.use("/", require("./routes/loginValidator"));
 
