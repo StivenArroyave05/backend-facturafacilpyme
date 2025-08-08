@@ -26,7 +26,7 @@ const createpreferenceRoutes = require("./routes/create_preference");
 const webhookRoutes = require("./routes/webhook");
 const loginValidatorRoutes = require("./routes/loginValidator");
 
-app.use("/", createPreferenceRoutes);
+app.use("/", createpreferenceRoutes);
 app.use("/", webhookRoutes);
 app.use("/", loginValidatorRoutes);
 
