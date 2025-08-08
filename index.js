@@ -22,7 +22,7 @@ mercadopago.configure({
 });
 
 // Rutas
-const createPreferenceRoutes = require("./routes/create_preference");
+const createpreferenceRoutes = require("./routes/create_preference");
 const webhookRoutes = require("./routes/webhook");
 const loginValidatorRoutes = require("./routes/loginValidator");
 
