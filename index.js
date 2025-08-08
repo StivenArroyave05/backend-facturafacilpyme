@@ -1,24 +1,19 @@
 
 require("dotenv").config();
 const express = require("express");
-const app = express();
-const mercadopago = require("mercadopago");
 const cors = require("cors");
-app.use(cors({
-  origin: "https://facturafacilpymes.netlify.app",
-  methods: "GET,POST",
-}));
+const mercadopago = require("mercadopago");
+const app = express();
+const { GoogleSpreadsheet } = require("google-spreadsheet");
 
-
-
-const PORT = process.env.PORT || 3000;
+app.use(express.json());
+app.use(cors());
+app.use(express.json());
 
 // Configurar MercadoPago con token desde .env
 mercadopago.configure({
   access_token: process.env.MERCADOPAGO_ACCESS_TOKEN,
 });
-
-app.use(express.json());
 
 // Rutas
 const createPreference = require("./routes/create_preference");
@@ -28,8 +23,9 @@ app.use("/", require("./routes/webhook"));
 app.use("/", require("./routes/loginValidator"));
 
 // Servidor
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
 });
 
-console.log("Token MercadoPago:", process.env.MP_ACCESS_TOKEN);
+console.log("Token MercadoPago:", process.env.MERCADOPAGO_ACCESS_TOKEN);
