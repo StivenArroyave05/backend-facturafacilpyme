@@ -1,0 +1,34 @@
+# ⚠️ Archivos sensibles
+node_modules
+.env
+credentials.json
+.DS_Store
+*.pem
+*.log
+
+# 🧠 Directorios generados por dependencias
+node_modules/
+.nyc_output/
+coverage/
+
+# 🚀 Configuraciones del sistema
+.DS_Store
+Thumbs.db
+
+# 💻 IDEs
+.vscode/
+.idea/
+
+# 📦 Archivos de compilación (por si usas TypeScript o bundlers)
+dist/
+build/
+
+# ⚙️ Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🧪 Archivos temporales
+*.swp
+*.tmp

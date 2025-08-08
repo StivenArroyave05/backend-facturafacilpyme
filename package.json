@@ -1,0 +1,16 @@
+{
+  "name": "facturafacil-backend",
+  "version": "1.0.0",
+  "description": "Backend para integrar MercadoPago y Google Sheets con FacturaFácilPyme",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "google-spreadsheet": "^3.3.0",
+    "mercadopago": "^1.5.15"
+  }
+}
